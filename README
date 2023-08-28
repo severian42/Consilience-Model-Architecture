@@ -270,7 +270,7 @@ optimizer_combined = optim.Adam(combined_model.parameters())
 
 ---
 
-This paper marks the inaugural release of the Consilience Equation, a model that promises to reshape our understanding of complex systems. 
+This paper marks the inaugural release of the Consilience Equation, a model that hopes to reshape our understanding of complex systems. 
 It is presented with the hope that the machine learning and HuggingFace community will embrace, explore, and expand upon this novel framework.
 
 Citation
