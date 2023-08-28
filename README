@@ -69,28 +69,6 @@ Getting Started
 **Notebooks and scripts coming soon!!!**
 See below for general Model Architecture in Tensorflow
 
-Citation
-Please cite this work as:
-
-Copy code
-
-@article{consilience2022,
-title={The Consilience Equation: Bridging Holism and Reductionism in Machine Learning and Biomimicry},
-author={John Doe},
-journal={arXiv},
-year={2022}
-}
-References
-n/a
-
-Related works:
-
-Holistic modeling approaches
-Reductionist modeling approaches
-Ensemble methods in machine learning
-Contributing
-Contributions welcome! Please open an issue or PR.
-
 ---
 
 ## Python Code: A Practical Guide
@@ -337,4 +315,27 @@ optimizer_combined = optim.Adam(combined_model.parameters())
 
 ---
 
-This paper marks the inaugural release of the Consilience Equation, a model that promises to reshape our understanding of complex systems. It is presented with the hope that the machine learning and HuggingFace community will embrace, explore, and expand upon this novel framework.
+This paper marks the inaugural release of the Consilience Equation, a model that promises to reshape our understanding of complex systems. 
+It is presented with the hope that the machine learning and HuggingFace community will embrace, explore, and expand upon this novel framework.
+
+Citation
+Please cite this work as:
+
+Copy code
+
+@article{consilience2022,
+title={The Consilience Equation: Bridging Holism and Reductionism in Machine Learning and Biomimicry},
+author={John Doe},
+journal={arXiv},
+year={2022}
+}
+References
+n/a
+
+Related works:
+
+Holistic modeling approaches
+Reductionist modeling approaches
+Ensemble methods in machine learning
+Contributing
+Contributions welcome! Please open an issue or PR.
