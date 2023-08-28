@@ -1,24 +1,24 @@
-*****THIS REPO IS UNDER CONSTRUCTION*****
+**\***THIS REPO IS UNDER CONSTRUCTION**\***
 
 # The Consilience Equation: Bridging Holism and Reductionism in Machine Learning and Biomimicry
 
 ## Abstract
 
-Introducing the Consilience Equation, a novel framework that synergizes holistic and reductionist paradigms for data analysis. 
-This paper unveils the equation for the first time, elucidating its mathematical formulation, implementation in machine 
+Introducing the Consilience Equation, a novel framework that synergizes holistic and reductionist paradigms for data analysis.
+This paper unveils the equation for the first time, elucidating its mathematical formulation, implementation in machine
 learning, potential applications in biomimicry, and a code interpretation to generate visuals and unique perspectives.
 
 ## Introduction
 
-In the scientific pursuit of understanding complex systems, two contrasting approaches prevail: holism, which emphasizes the whole system, 
-and reductionism, which breaks down the system into simpler parts. The Consilience Equation, presented here for the first time, harmonizes 
+In the scientific pursuit of understanding complex systems, two contrasting approaches prevail: holism, which emphasizes the whole system,
+and reductionism, which breaks down the system into simpler parts. The Consilience Equation, presented here for the first time, harmonizes
 these two perspectives, offering a flexible and balanced methodology that transcends traditional boundaries.
 
 ## The Consilience Equation: A Comprehensive Examination
 
 The Consilience Equation is expressed as:
 
-L(Y, F(X)) + w * L(X, G(Z)) 
+L(Y, F(X)) + w \* L(X, G(Z))
 
 where:
 
@@ -33,8 +33,8 @@ where:
 ### Dynamic Weighting: A Unique Innovation
 
 Dynamic Weighting: A Unique Innovation
-The dynamic weighting parameter w is a pioneering aspect of the Consilience Equation. It allows for the fine-tuning of 
-the balance between the holistic and reductionist models, adapting to different contexts and data characteristics. 
+The dynamic weighting parameter w is a pioneering aspect of the Consilience Equation. It allows for the fine-tuning of
+the balance between the holistic and reductionist models, adapting to different contexts and data characteristics.
 The functionality of w varies between the training and inference phases, providing a versatile and adaptive mechanism.
 
 During Training
@@ -63,14 +63,10 @@ The reductionist model (G) simplifies the system into more interpretable compone
 
 An ensemble method, such as a Voting Regressor, can combine the predictions of (F) and (G). The weighting parameter \(w\) can be optimized using techniques like grid search, allowing for a tailored balance between the models.
 
-
 **Experiment: Substantiating the Capabilities of the Consilience Equation**- WILL BE RELEASED SOON!!! I wanted to give others the chance to play around and explore the uses before I fully release my paper and project.
 
-
-
-
 Getting Started
-**Notebooks and scripts coming soon!!!** 
+**Notebooks and scripts coming soon!!!**
 See below for general Model Architecture in Tensorflow
 
 Citation
@@ -79,10 +75,10 @@ Please cite this work as:
 Copy code
 
 @article{consilience2022,
-  title={The Consilience Equation: Bridging Holism and Reductionism in Machine Learning and Biomimicry},
-  author={John Doe},
-  journal={arXiv},
-  year={2022}
+title={The Consilience Equation: Bridging Holism and Reductionism in Machine Learning and Biomimicry},
+author={John Doe},
+journal={arXiv},
+year={2022}
 }
 References
 n/a
@@ -95,12 +91,11 @@ Ensemble methods in machine learning
 Contributing
 Contributions welcome! Please open an issue or PR.
 
-
-----------------
+---
 
 ## Python Code: A Practical Guide
 
-The accompanying Python code (see Appendix) serves as a practical guide for implementing the Consilience Equation. It includes a custom TensorFlow layer for dynamic weighting, 
+The accompanying Python code (see Appendix) serves as a practical guide for implementing the Consilience Equation. It includes a custom TensorFlow layer for dynamic weighting,
 providing a hands-on example for researchers and practitioners.
 
 ## Appendix
@@ -118,12 +113,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import class_weight
 
 # Custom layer for the Consilience Equation with dynamic weighting
+
 class DynamicCombinedModelLayer(Layer):
-    def __init__(self, model_F, model_G, **kwargs):
-        super().__init__(**kwargs)
-        self.model_F = model_F
-        self.model_G = model_G
-        self.w = self.add_weight(shape=(1, ), initializer=tf.keras.initializers.Constant(0.5), trainable=True)
+def **init**(self, model_F, model_G, **kwargs):
+super().**init**(**kwargs)
+self.model_F = model_F
+self.model_G = model_G
+self.w = self.add_weight(shape=(1, ), initializer=tf.keras.initializers.Constant(0.5), trainable=True)
 
     def call(self, inputs, training=None):
         # During training, apply dynamic weighting
@@ -143,42 +139,50 @@ class DynamicCombinedModelLayer(Layer):
         else:
             return self.w * self.model_F(inputs[0]) + (1 - self.w) * self.model_G(inputs[0])
 
-
 # Load your data
+
 # X, y = load_your_data()
 
 # Split your data into training and testing sets
+
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Define your holistic model (model_F)
+
 input_layer_F = Input(shape=(num_features,))
 x = Dense(1024, activation='relu')(input_layer_F)
 output_layer_F = Dense(num_output_features, activation='sigmoid')(x)
 model_F = Model(input_layer_F, output_layer_F)
 
 # Define your reductionist model (model_G)
+
 input_layer_G = Input(shape=(num_features,))
 x = Dense(512, activation='relu')(input_layer_G)
 output_layer_G = Dense(num_output_features, activation='sigmoid')(x)
 model_G = Model(input_layer_G, output_layer_G)
 
 # Define your combined model
+
 combined_model_layer = CombinedModelLayer(model_F, model_G)
 input_layer_combined = Input(shape=(num_features,))
 output_layer_combined = combined_model_layer(input_layer_combined)
 combined_model = Model(input_layer_combined, output_layer_combined)
 
 # Compile your models
+
 model_F.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
 model_G.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
 combined_model.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
 
 # Train your models
+
 # model_F.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+
 # model_G.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+
 # combined_model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
 
------------
+---
 
 Consilience Core Model - PyTorch
 
@@ -190,12 +194,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import class_weight
 
 # Custom layer for the Consilience Equation with dynamic weighting
+
 class DynamicCombinedModelLayer(nn.Module):
-    def __init__(self, model_F, model_G):
-        super().__init__()
-        self.model_F = model_F
-        self.model_G = model_G
-        self.w = nn.Parameter(torch.tensor(0.5), requires_grad=True)
+def **init**(self, model_F, model_G):
+super().**init**()
+self.model_F = model_F
+self.model_G = model_G
+self.w = nn.Parameter(torch.tensor(0.5), requires_grad=True)
 
     def forward(self, inputs, labels=None):
         if self.training and labels is not None:
@@ -212,95 +217,124 @@ class DynamicCombinedModelLayer(nn.Module):
             return self.w * self.model_F(inputs) + (1 - self.w) * self.model_G(inputs)
 
 # Define your holistic model (model_F)
+
 class ModelF(nn.Module):
-    def __init__(self, num_features, num_output_features):
-        super().__init__()
-        self.layers = nn.Sequential(
-            nn.Linear(num_features, 1024),
-            nn.ReLU(),
-            nn.Linear(1024, num_output_features),
-            nn.Sigmoid()
-        )
+def **init**(self, num_features, num_output_features):
+super().**init**()
+self.layers = nn.Sequential(
+nn.Linear(num_features, 1024),
+nn.ReLU(),
+nn.Linear(1024, num_output_features),
+nn.Sigmoid()
+)
 
     def forward(self, x):
         return self.layers(x)
 
 # Define your reductionist model (model_G)
+
 class ModelG(nn.Module):
-    def __init__(self, num_features, num_output_features):
-        super().__init__()
-        self.layers = nn.Sequential(
-            nn.Linear(num_features, 512),
-            nn.ReLU(),
-            nn.Linear(512, num_output_features),
-            nn.Sigmoid()
-        )
+def **init**(self, num_features, num_output_features):
+super().**init**()
+self.layers = nn.Sequential(
+nn.Linear(num_features, 512),
+nn.ReLU(),
+nn.Linear(512, num_output_features),
+nn.Sigmoid()
+)
 
     def forward(self, x):
         return self.layers(x)
 
 # Define your combined model
+
 class CombinedModel(nn.Module):
-    def __init__(self, model_F, model_G):
-        super().__init__()
-        self.combined_layer = DynamicCombinedModelLayer(model_F, model_G)
+def **init**(self, model_F, model_G):
+super().**init**()
+self.combined_layer = DynamicCombinedModelLayer(model_F, model_G)
 
     def forward(self, x, labels=None):
         return self.combined_layer(x, labels)
 
 # Load your data
+
 # X, y = load_your_data()
 
 # Split your data into training and testing sets
+
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Convert to PyTorch tensors
+
 # X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
+
 # y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
 
 # Create DataLoader
+
 # train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
+
 # train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
 # Instantiate models
+
 model_F = ModelF(num_features, num_output_features)
 model_G = ModelG(num_features, num_output_features)
 combined_model = CombinedModel(model_F, model_G)
 
 # Define loss and optimizer
+
 criterion = nn.BCELoss()
 optimizer_F = optim.Adam(model_F.parameters())
 optimizer_G = optim.Adam(model_G.parameters())
 optimizer_combined = optim.Adam(combined_model.parameters())
 
 # Training loop example
+
 # for epoch in range(10):
-#     for inputs, labels in train_loader:
-#         # Zero the gradients
-#         optimizer_F.zero_grad()
-#         optimizer_G.zero_grad()
-#         optimizer_combined.zero_grad()
 
-#         # Forward pass
-#         outputs_F = model_F(inputs)
-#         outputs_G = model_G(inputs)
-#         outputs_combined = combined_model(inputs, labels)
+# for inputs, labels in train_loader:
 
-#         # Compute loss
-#         loss_F = criterion(outputs_F, labels)
-#         loss_G = criterion(outputs_G, labels)
-#         loss_combined = criterion(outputs_combined, labels)
+# # Zero the gradients
 
-#         # Backward pass
-#         loss_F.backward()
-#         loss_G.backward()
-#         loss_combined.backward()
+# optimizer_F.zero_grad()
 
-#         # Update weights
-#         optimizer_F.step()
-#         optimizer_G.step()
-#         optimizer_combined.step()
+# optimizer_G.zero_grad()
 
----------------
+# optimizer_combined.zero_grad()
+
+# # Forward pass
+
+# outputs_F = model_F(inputs)
+
+# outputs_G = model_G(inputs)
+
+# outputs_combined = combined_model(inputs, labels)
+
+# # Compute loss
+
+# loss_F = criterion(outputs_F, labels)
+
+# loss_G = criterion(outputs_G, labels)
+
+# loss_combined = criterion(outputs_combined, labels)
+
+# # Backward pass
+
+# loss_F.backward()
+
+# loss_G.backward()
+
+# loss_combined.backward()
+
+# # Update weights
+
+# optimizer_F.step()
+
+# optimizer_G.step()
+
+# optimizer_combined.step()
+
+---
 
 This paper marks the inaugural release of the Consilience Equation, a model that promises to reshape our understanding of complex systems. It is presented with the hope that the machine learning and HuggingFace community will embrace, explore, and expand upon this novel framework.
