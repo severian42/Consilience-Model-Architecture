@@ -18,7 +18,7 @@ these two perspectives, offering a flexible and balanced methodology that transc
 
 The Consilience Equation is expressed as:
 
-L(Y, F(X)) + w \* L(X, G(Z))
+L(Y, F(X)) + w * L(X, G(Z))
 
 where:
 
@@ -321,21 +321,13 @@ It is presented with the hope that the machine learning and HuggingFace communit
 Citation
 Please cite this work as:
 
-Copy code
-
-@article{consilience2022,
+@article{consilience2023,
 title={The Consilience Equation: Bridging Holism and Reductionism in Machine Learning and Biomimicry},
-author={John Doe},
-journal={arXiv},
-year={2022}
+author={Beckett Dillon},
+journal={N/A},
+year={2023}
 }
-References
-n/a
 
-Related works:
 
-Holistic modeling approaches
-Reductionist modeling approaches
-Ensemble methods in machine learning
 Contributing
 Contributions welcome! Please open an issue or PR.
